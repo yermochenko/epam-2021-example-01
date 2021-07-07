@@ -1,5 +1,8 @@
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Hello, World!!!");
+        Voucher v = new Voucher();
+        Voucher v1 = v;
+        v = null;
+        v1 = null;
     }
 }
