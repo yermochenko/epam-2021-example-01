@@ -30,81 +30,81 @@ public class Test {
         List<Voucher> vouchers = new ArrayList<>();
         Voucher voucher = null;
 
-        voucher = new Voucher();
-        voucher.setId(1L);
-        voucher.setCountry("Египет");
-        voucher.setType(relaxationVoucherType);
-        voucher.setTransport(airplanTransportType);
-        voucher.setFood(aiFoodType);
-        voucher.setDays(10);
-        voucher.setPrice(80000L);
-        voucher.setHot(true);
+        voucher = new Voucher.Builder()
+        .setId(1L)
+        .setCountry("Египет")
+        .setPrice(80000L)
+        .setDays(10)
+        .setType(relaxationVoucherType)
+        .setFood(aiFoodType)
+        .setTransport(airplanTransportType)
+        .setHot(true)
+        .build();
         vouchers.add(voucher);
 
-        voucher = new Voucher();
-        voucher.setId(2L);
-        voucher.setCountry("Крым");
-        voucher.setType(relaxationVoucherType);
-        voucher.setTransport(trainTransportType);
-        voucher.setFood(roFoodType);
-        voucher.setDays(15);
-        voucher.setPrice(55000L);
-        voucher.setHot(false);
+        voucher = new Voucher.Builder()
+        .setId(2L)
+        .setCountry("Крым")
+        .setDays(15)
+        .setType(relaxationVoucherType)
+        .setPrice(55000L)
+        .setTransport(trainTransportType)
+        .build();
         vouchers.add(voucher);
 
-        voucher = new Voucher();
-        voucher.setId(3L);
-        voucher.setCountry("Германия");
-        voucher.setType(excursionVoucherType);
-        voucher.setTransport(busTransportType);
-        voucher.setFood(bbFoodType);
-        voucher.setDays(5);
-        voucher.setPrice(99000L);
-        voucher.setHot(false);
+        voucher = new Voucher.Builder()
+        .setId(3L)
+        .setCountry("Германия")
+        .setType(excursionVoucherType)
+        .setDays(5)
+        .setTransport(busTransportType)
+        .setPrice(99000L)
+        .setFood(bbFoodType)
+        .build();
         vouchers.add(voucher);
 
-        voucher = new Voucher();
-        voucher.setId(4L);
-        voucher.setCountry("Германия");
-        voucher.setType(shoppingVoucherType);
-        voucher.setTransport(trainTransportType);
-        voucher.setFood(hbFoodType);
-        voucher.setDays(3);
-        voucher.setPrice(87000L);
-        voucher.setHot(false);
+        voucher = new Voucher.Builder()
+        .setId(4L)
+        .setType(shoppingVoucherType)
+        .setCountry("Германия")
+        .setPrice(87000L)
+        .setFood(hbFoodType)
+        .setDays(3)
+        .setTransport(trainTransportType)
+        .build();
         vouchers.add(voucher);
 
-        voucher = new Voucher();
-        voucher.setId(5L);
-        voucher.setCountry("Израиль");
-        voucher.setType(shoppingVoucherType);
-        voucher.setTransport(airplanTransportType);
-        voucher.setFood(bbFoodType);
-        voucher.setDays(3);
-        voucher.setPrice(79000L);
-        voucher.setHot(false);
+        voucher = new Voucher.Builder()
+        .setId(5L)
+        .setType(shoppingVoucherType)
+        .setCountry("Израиль")
+        .setPrice(79000L)
+        .setDays(3)
+        .setTransport(airplanTransportType)
+        .setFood(bbFoodType)
+        .build();
         vouchers.add(voucher);
 
-        voucher = new Voucher();
-        voucher.setId(6L);
-        voucher.setCountry("Израиль");
-        voucher.setType(healingVoucherType);
-        voucher.setTransport(shipTransportType);
-        voucher.setFood(fbFoodType);
-        voucher.setDays(21);
-        voucher.setPrice(257000L);
-        voucher.setHot(false);
+        voucher = new Voucher.Builder()
+        .setId(6L)
+        .setCountry("Израиль")
+        .setType(healingVoucherType)
+        .setTransport(shipTransportType)
+        .setDays(21)
+        .setPrice(257000L)
+        .setFood(fbFoodType)
+        .build();
         vouchers.add(voucher);
 
-        voucher = new Voucher();
-        voucher.setId(7L);
-        voucher.setCountry("Бразилия");
-        voucher.setType(cruiseVoucherType);
-        voucher.setTransport(shipTransportType);
-        voucher.setFood(aiFoodType);
-        voucher.setDays(30);
-        voucher.setPrice(1399000L);
-        voucher.setHot(true);
+        voucher = new Voucher.Builder()
+        .setId(7L)
+        .setType(cruiseVoucherType)
+        .setTransport(shipTransportType)
+        .setFood(aiFoodType)
+        .setDays(30)
+        .setPrice(1399000L)
+        .setCountry("Бразилия")
+        .build();
         vouchers.add(voucher);
     }
 }
