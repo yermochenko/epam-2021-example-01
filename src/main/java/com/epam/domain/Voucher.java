@@ -84,6 +84,10 @@ public class Voucher {
     }
 
     public Long getPrice() {
+        return calculatePrice();
+    }
+
+    private Long calculatePrice() {
         Long price = days * costPerDay;
         price += (long)(distance * transport.getCostPerKilometer());
         if(food != null) {
