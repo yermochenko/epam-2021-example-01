@@ -41,6 +41,7 @@ public class Voucher {
 
     public void setTransport(TransportType transport) {
         this.transport = transport;
+        price = null;
     }
 
     public Double getDistance() {
@@ -49,6 +50,7 @@ public class Voucher {
 
     public void setDistance(Double distance) {
         this.distance = distance;
+        price = null;
     }
 
     public FoodType getFood() {
@@ -57,6 +59,7 @@ public class Voucher {
 
     public void setFood(FoodType food) {
         this.food = food;
+        price = null;
     }
 
     public Integer getDays() {
@@ -65,6 +68,7 @@ public class Voucher {
 
     public void setDays(Integer days) {
         this.days = days;
+        price = null;
     }
 
     public Long getCostPerDay() {
@@ -73,6 +77,7 @@ public class Voucher {
 
     public void setCostPerDay(Long costPerDay) {
         this.costPerDay = costPerDay;
+        price = null;
     }
 
     public Boolean getHot() {
@@ -81,10 +86,15 @@ public class Voucher {
 
     public void setHot(Boolean hot) {
         this.hot = hot;
+        price = null;
     }
 
+    private Long price = null;
     public Long getPrice() {
-        return calculatePrice();
+        if(price == null) {
+            price = calculatePrice();
+        }
+        return price;
     }
 
     private Long calculatePrice() {
