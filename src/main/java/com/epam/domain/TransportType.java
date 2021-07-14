@@ -3,10 +3,12 @@ package com.epam.domain;
 public class TransportType {
     private Long id;
     private String name;
+    private Long costPerKilometer;
 
-    public TransportType(Long id, String name) {
+    public TransportType(Long id, String name, Long costPerKilometer) {
         this.id = id;
         this.name = name;
+        this.costPerKilometer = costPerKilometer;
     }
 
     public Long getId() {
@@ -15,5 +17,9 @@ public class TransportType {
 
     public String getName() {
         return name;
+    }
+
+    public Long getCostPerKilometer() {
+        return costPerKilometer;
     }
 }
