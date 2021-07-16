@@ -1,91 +1,80 @@
 package com.epam.domain;
 
-public class Voucher {
+abstract public class Voucher {
     private Long id;
     private String country;
-    private VoucherType type;
-    private TransportType transport;
+    private String type;
     private Double distance;
     private FoodType food;
     private Integer days;
-    private Long costPerDay;
     private Boolean hot;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public VoucherType getType() {
-        return type;
-    }
-
-    public void setType(VoucherType type) {
+    public Voucher(String type) {
         this.type = type;
     }
 
-    public TransportType getTransport() {
-        return transport;
+    public final Long getId() {
+        return id;
     }
 
-    public void setTransport(TransportType transport) {
-        this.transport = transport;
+    public final void setId(Long id) {
+        this.id = id;
     }
 
-    public Double getDistance() {
+    public final String getCountry() {
+        return country;
+    }
+
+    public final void setCountry(String country) {
+        this.country = country;
+    }
+
+    public final String getType() {
+        return type;
+    }
+
+    public final Double getDistance() {
         return distance;
     }
 
-    public void setDistance(Double distance) {
+    public final void setDistance(Double distance) {
         this.distance = distance;
     }
 
-    public FoodType getFood() {
+    public final FoodType getFood() {
         return food;
     }
 
-    public void setFood(FoodType food) {
+    public final void setFood(FoodType food) {
         this.food = food;
     }
 
-    public Integer getDays() {
+    public final Integer getDays() {
         return days;
     }
 
-    public void setDays(Integer days) {
+    public final void setDays(Integer days) {
         this.days = days;
     }
 
-    public Long getCostPerDay() {
-        return costPerDay;
-    }
-
-    public void setCostPerDay(Long costPerDay) {
-        this.costPerDay = costPerDay;
-    }
-
-    public Boolean getHot() {
+    public final Boolean getHot() {
         return hot;
     }
 
-    public void setHot(Boolean hot) {
+    public final void setHot(Boolean hot) {
         this.hot = hot;
     }
 
+    public abstract TransportType getTransport();
+
+    public abstract Long getCostPerDay();
+
     public Long getPrice() {
-        Long price = days * costPerDay;
-        price += (long)(distance * transport.getCostPerKilometer());
+        Long price = days * getCostPerDay();
+        TransportType transport = getTransport();
+        if(transport != null) {
+            price += (long)(distance * getTransport().getCostPerKilometer());
+        }
         if(food != null) {
             price += days * food.getCostPerDay();
         }
@@ -93,5 +82,20 @@ public class Voucher {
             price = (long)(price * 0.9);
         }
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Voucher {\n\tid = " + id
+                + ",\n\tcountry = " + country
+                + ",\n\ttype = " + type
+                + ",\n\tdistance = " + distance
+                + ",\n\tfood = " + food
+                + ",\n\tdays = " + days
+                + ",\n\thot = " + hot
+                + ",\n\tgetTransport() = " + getTransport()
+                + ",\n\tgetCostPerDay() = " + getCostPerDay()
+                + ",\n\tgetPrice() = " + getPrice()
+                + "\n}";
     }
 }

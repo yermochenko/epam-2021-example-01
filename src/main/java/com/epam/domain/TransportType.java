@@ -22,4 +22,9 @@ public class TransportType {
     public Long getCostPerKilometer() {
         return costPerKilometer;
     }
+
+    @Override
+    public String toString() {
+        return "TransportType {id = " + id + ", name = " + name + ", costPerKilometer = " + costPerKilometer + "}";
+    }
 }

@@ -22,4 +22,9 @@ public class FoodType {
     public Long getCostPerDay() {
         return costPerDay;
     }
+
+    @Override
+    public String toString() {
+        return "FoodType {id = " + id + ", name = " + name + ", costPerDay = " + costPerDay + "}";
+    }
 }
